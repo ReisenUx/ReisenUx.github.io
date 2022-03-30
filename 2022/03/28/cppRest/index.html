@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2022-03-28T05:19:53.000Z">
-<meta property="article:modified_time" content="2022-03-30T08:28:29.550Z">
+<meta property="article:modified_time" content="2022-03-30T08:42:56.222Z">
 <meta property="article:author" content="ReisenU">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/null">
@@ -166,7 +166,7 @@
         </header>
         <div class="kratos-post-content">
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                本文最后编辑于 <time datetime="1648628909550"></time> 前，其中的内容可能需要更新。
+                本文最后编辑于 <time datetime="1648629776222"></time> 前，其中的内容可能需要更新。
             </div>
             
                 <div class="kratos-post-inner-toc">
@@ -355,7 +355,7 @@
 <p>  可是，当这一系列构造函数调用正发生时，每一个构造函数都已经设置vptr指向它自己的vtable。<br>  假设函数调用使用虚函数机制，它将仅仅产生通过它自己的table调用，而不是最后的vtable（全部构造函数被调用后才有最后的vtable）</p>
 <p>  因为构造函数本来就是为了明确初始化对象成员才产生的，然而virtual function主要是为了在不完全了解细节的情况下也能正确处理对象。<br>  另外，virtual函数是在不同类型的对象产生不同的动作，而现在对象还没有产生，如何使用virtual函数实现想要的动作？</p>
 <p>  直白的讲：C++中基类采用的virtual虚析构函数是为了<b>防止内存泄漏</b></p>
-<p>  具体地说，如果派生类中申请了内存空间，并在其析构函数中对这些内存空间进行释放。<br>  假设基类中采用的是非析构函数，当删除基类指针指向的派生类对象时，就<b>不会产生动态绑定<b>，因而只会调用基类的析构函数，而不是派生类析构函数。</p>
+<p>  具体地说，如果派生类中申请了内存空间，并在其析构函数中对这些内存空间进行释放。<br>  假设基类中采用的是非析构函数，当删除基类指针指向的派生类对象时，就<b>不会产生动态绑定</b>，因而只会调用基类的析构函数，而不是派生类析构函数。</p>
 <p>  这种情况下，派生类中申请的空间就会因为得不到释放而产生内存泄漏</p>
 <h2 id="所以，为了防止这种情况发生，C-中基类的析构函数应采用virtual虚析构函数。"><a href="#所以，为了防止这种情况发生，C-中基类的析构函数应采用virtual虚析构函数。" class="headerlink" title="  所以，为了防止这种情况发生，C++中基类的析构函数应采用virtual虚析构函数。"></a>  所以，为了防止这种情况发生，C++中基类的析构函数应采用virtual虚析构函数。</h2><h2 id="9、析构函数的作用，如何起作用？"><a href="#9、析构函数的作用，如何起作用？" class="headerlink" title="9、析构函数的作用，如何起作用？"></a>9、析构函数的作用，如何起作用？</h2><ol>
 <li><p>构造函数只是起初始化值的作用，但实例化一个对象的时候，可以通过实例去传递参数，从主函数传递到其他的函数里面，这样就使其他的函数里有值了</p>
